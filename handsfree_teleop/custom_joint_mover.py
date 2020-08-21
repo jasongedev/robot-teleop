@@ -64,6 +64,7 @@ class CustomJointMover:
         return msg
 
     def callback(self, joint_states):
+	#TODO: get callbacks from JointState subscription to set start points for motion planning 
         self.current_joint_positions = joint_states.position
         return
     
@@ -84,6 +85,7 @@ class CustomJointMover:
     def run(self):
         #rospy.Subscriber("joint_states", JointState, self.callback)
         
+	#TODO: add bash param in package launchfile for setting port number in rospy
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.sock.bind(('127.0.0.1', 8080))
 
@@ -101,4 +103,4 @@ class CustomJointMover:
 if __name__ == '__main__':
     rospy.init_node('custom_joint_mover', anonymous=True, log_level=rospy.DEBUG)
     rospy.resolve_name
-    CustomJointJogger().run()
+    CustomJointMover().run()

@@ -1,12 +1,7 @@
 import numpy as np
 
 from modules.pose import Pose, propagate_ids
-try:
-    from pose_extractor import extract_poses
-except:
-    print('Build for faster FPS')
-    from modules.legacy_pose_extractor import extract_poses
-
+#from pose_extractor import extract_poses
 
 AVG_PERSON_HEIGHT = 180
 
