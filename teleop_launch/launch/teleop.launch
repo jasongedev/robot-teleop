@@ -1,0 +1,7 @@
+<launch>
+  <rosparam command="load"
+	    file="$(find teleop_launch)/motoman_sda10f_jog.yaml"/>
+
+  <node name="custom_joint_jogger" pkg="handsfree_teleop" type="custom_joint_jogger.py">
+  </node>
+</launch>
