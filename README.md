@@ -5,4 +5,4 @@ Docs and build instructions being updated. Discussion of implementation also to 
 
 # Overview
 
-This package is a proof of concept for using ROS and MoveIt to control two robot arms in real-time through a monocular camera feed.
+This package is a proof of concept for using ROS and MoveIt to control two robot arms in real-time that mirror human poses captured through a monocular camera feed.
