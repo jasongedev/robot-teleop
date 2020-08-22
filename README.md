@@ -1,7 +1,7 @@
 # Hands-free Teleoperation of a Dual-Arm Robot via Real-time 3D Pose Estimation
 
 
-Install and setup instructions being updated. Discussion of approach & implementation also to come. Check back on Monday!
+Install and setup instructions currently being updated. Discussion of approach & implementation also to come, plus some example videos. Check back on Monday!
 
 # Overview
 
@@ -11,7 +11,7 @@ In practice, manually controlling a robot and deviating it off a pre-programmed 
 
 Existing human-in-the-loop solutions in industrial robots involve the driver being sent jogging commands by a handheld controller or other physical input device. Significant data is lost in the process of a human operator translating their movement intention into joystick or button inputs. In addition, the human operator takes on the significant mental load of extrapolating their action into 3D space from a third person perspective.
 
-The most precise and instinctive method by which humans use to interact with the physical world is none other than manipulating the limbs of their own body. 
+The most precise and instinctive method by which humans use to interact with the physical world is by none other than manipulating the limbs of their own body. 
 
 Current master-slave implementations within the industry involve devices that are highly specific to a single robot, importable, expensive, and generally unscaleable. Having a cost-free and universal method of control that allows untrained human operators to move the limbs of a robot as if it were their own body may open up new doors within the robotics industry.
 
