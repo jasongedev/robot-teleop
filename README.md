@@ -1,7 +1,7 @@
 # Hands-free Teleoperation of a Dual-Arm Robot via Real-time 3D Pose Estimation
 
 
-Install and instructions being updated. Discussion of approach & implementation also to come. Check back on Monday!
+Install and setup instructions being updated. Discussion of approach & implementation also to come. Check back on Monday!
 
 # Overview
 
@@ -16,7 +16,6 @@ The most precise and instinctive way humans know to interact with the physical w
 Current master-slave implementations within the industry involve devices that are highly specific to a single robot, importable, expensive, and generally unscaleable. Having a cost-free and universal method of control that allows untrained human operators to move the limbs of a robot as if it were their own body may open up new doors within the robotics industry.
 
 ## Requirements
-*** 
 * Ubuntu 18.04 LTS
 * ROS Melodic Morenia
 * Python >= 3.6
@@ -24,16 +23,17 @@ Current master-slave implementations within the industry involve devices that ar
 * OpenCV >= 4.0
 
 ## Set up
+Coming soon
 
 ## Usage
 
 From Catkin workspace:
 ```
-python3 src/handsfree_teleop/pose_estimation/main.py -m human-pose-estimation-3d.pth --video /dev/video0
+$ python3 src/handsfree_teleop/pose_estimation/main.py -m human-pose-estimation-3d.pth --video /dev/video0
 ```
 ```
-roslaunch motoman_sda10f_moveit_config moveit_planning_execution.launch sim:=true
+$ roslaunch motoman_sda10f_moveit_config moveit_planning_execution.launch sim:=true
 ```
 ```
-roslaunch remote_teleop teleop.launch
+$ roslaunch handsfree_teleop teleop.launch
 ```
