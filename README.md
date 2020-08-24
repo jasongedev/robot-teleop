@@ -34,7 +34,7 @@ Step 2:
 Step 3:
 Install this repo into your Catkin workspace:
 ```
-git clone https://github.com/jasongedev/handsfree-teleop/
+git clone "https://github.com/jasongedev/handsfree-teleop/" src
 pip3 install -r src/hands_free_teleop/pose_estimation/requirements.txt
 rosdep -r install
 catkin build -j7
