@@ -27,13 +27,16 @@ Current master-slave implementations within the industry involve devices that ar
 ## Set up
 Step 1:
 [Create a Catkin workspace](http://wiki.ros.org/melodic/Installation/Source#Create_a_catkin_Workspace)
+
 Step 2:
 [Install the ROS-Industrial packages](http://wiki.ros.org/Industrial/Install)
+
 Step 3:
 Install this repo into your Catkin workspace:
 ```
 git clone https://github.com/jasongedev/handsfree-teleop/
-rosdep install
+pip3 install -r src/hands_free_teleop/pose_estimation/requirements.txt
+rosdep -r install
 catkin build -j7
 source devel/setup.bash
 ```
