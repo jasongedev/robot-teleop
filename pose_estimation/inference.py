@@ -7,7 +7,8 @@ from modules.input_reader import VideoReader, ImageReader
 from modules.draw import Plotter3d, draw_poses
 from modules.parse_poses import parse_poses
 
-from classes.joint_angle_calculator import JointAngleCalculator
+from joint_angle_calculator import JointAngleCalculator
+from socket_server import SocketServer
 
 def rotate_poses(poses_3d, R, t):
     R_inv = np.linalg.inv(R)
@@ -19,10 +20,12 @@ def rotate_poses(poses_3d, R, t):
 
 def run_inference(args):
     from modules.inference_engine_pytorch import InferenceEnginePyTorch
+
+    socket_server = SocketServer(args.port)
     joint_angle_calculator = JointAngleCalculator()
 
     stride = 8
-    #net = InferenceEnginePyTorch(args.model, "GPU")
+
     model_path = os.path.join('models', 'human-pose-estimation-3d.pth')
     net = InferenceEnginePyTorch(model_path, "GPU")
 
@@ -79,8 +82,6 @@ def run_inference(args):
             poses_3d = poses_3d.reshape(poses_3d.shape[0], 19, -1)[:, :, 0:3]
             edges = (Plotter3d.SKELETON_EDGES + 19 * np.arange(poses_3d.shape[0]).reshape((-1, 1, 1))).reshape((-1, 2))
 
-            joint_angle_calculator.passthrough(poses_3d)
-
         plotter.plot(canvas_3d, poses_3d, edges)
         cv2.imshow(canvas_3d_window_name, canvas_3d)
 
@@ -114,3 +115,7 @@ def run_inference(args):
                 break
             else:
                 delay = 1
+        
+        joint_angles = joint_angle_calculator.calculate_angles(poses_3d)
+        if joint_angles:
+            socket_server.send_data(joint_angles)

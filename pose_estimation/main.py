@@ -2,6 +2,7 @@ from argparse import ArgumentParser
 import os
 
 from inference import run_inference
+from socket_server import SocketServer
 
 if __name__ == '__main__':
     parser = ArgumentParser(description='Lightweight 3D human pose estimation demo. '
@@ -15,5 +16,5 @@ if __name__ == '__main__':
 
     if args.video == '' and args.images == '':
         raise ValueError('Either --video or --image has to be provided')
-
+    
     run_inference(args)
