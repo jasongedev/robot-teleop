@@ -2,9 +2,8 @@
 
 This ROS package is a proof of concept for using ROS and MoveIt to control two robot manipulators that mirror human arm poses captured through a monocular camera feed in real-time.
 
-<img src="resources/example1.gif" width=900px>
-
-Install and setup instructions currently being updated. Discussion of approach & implementation also to come, plus some example videos. Check back on Monday!
+<img src="example_gifs/example1.gif" width=1200px>
+<img src="example_gifs/example2.gif" width=1200px>
 
 # Overview
 
@@ -26,7 +25,18 @@ Current master-slave implementations within the industry involve devices that ar
 * CUDA-capable GPU
 
 ## Set up
-Coming soon
+Step 1:
+[Create a Catkin workspace](http://wiki.ros.org/melodic/Installation/Source#Create_a_catkin_Workspace)
+Step 2:
+[Install the ROS-Industrial packages](http://wiki.ros.org/Industrial/Install)
+Step 3:
+Install this repo into your Catkin workspace:
+```
+git clone https://github.com/jasongedev/handsfree-teleop/
+rosdep install
+catkin build -j7
+source devel/setup.bash
+```
 
 ## Usage
 
