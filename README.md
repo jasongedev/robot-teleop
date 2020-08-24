@@ -19,7 +19,7 @@ Current master-slave implementations within the industry involve devices that ar
 * Ubuntu 18.04 LTS
 * ROS Melodic Morenia
 * Python >= 3.6
-* Pytorch >= 1.6.0
+* Pytorch >= 1.6
 * Numpy >= 1.17
 * OpenCV >= 4.0
 * CUDA-capable GPU
@@ -59,5 +59,5 @@ OR
 To stream a pre-recorded video:
 
 ```
-$ python3 src/handsfree_teleop/pose_estimation/main.py --video {VIDEO_FILEPATH}.mp4
+$ python3 src/handsfree_teleop/pose_estimation/main.py --video {VIDEO_FILEPATH.mp4}
 ```
