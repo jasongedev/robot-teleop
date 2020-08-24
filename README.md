@@ -7,13 +7,13 @@ This ROS package is a proof of concept for using ROS and MoveIt to control two r
 
 # Overview
 
-In practice, manually controlling a robot and deviating it off a pre-programmed path is often either highly imprecise or highly arduous.
+In practice, manually controlling a robot and deviating it off a pre-programmed path is either highly imprecise or highly arduous.
 
-Existing human-in-the-loop solutions in industrial robots involve the driver being sent jogging commands by a handheld controller or other physical input device. Significant data is lost in the process of a human operator translating their movement intention into joystick or button inputs. In addition, the human operator takes on the significant mental load of extrapolating their action into 3D space from a third person perspective.
+Existing human-in-the-loop solutions in industrial robots involve the driver being sent jogging commands by a handheld controller or other hardware input device. Significant data is lost in the process of a human operator translating their movement intention into joystick or button inputs. In addition, the human operator takes on significant mental load by having to extrapolate their actions into 3D space from a third person perspective.
 
-The most precise and instinctive method by which humans use to interact with the physical world is by none other than manipulating the limbs of their own body. 
+The most precise and instinctive method by which we humans use to interact with the physical world around us is by none other than manipulating the limbs of our own body. 
 
-Current master-slave implementations within the industry involve devices that are highly specific to a single robot, importable, expensive, and generally unscaleable. Having a cost-free and universal method of control that allows untrained human operators to move the limbs of a robot as if it were their own body may open up new doors within the robotics industry.
+Current master-slave implementations within the industry involve devices that are highly specific to a single robot, importable, expensive, and generally unscaleable. Having a cost-free and universal method of control that allows untrained human operators to move the limbs of a robot as if it were their own body may lead to the opening of new doors within the robotics industry.
 
 ## Requirements
 * Ubuntu 18.04 LTS
@@ -43,7 +43,7 @@ source devel/setup.bash
 
 ## Usage
 
-From within Catkin workspace:
+From three seperate terminals within your Catkin workspace:
 ```
 $ roslaunch motoman_sda10f_moveit_config moveit_planning_execution.launch sim:=true
 ```
