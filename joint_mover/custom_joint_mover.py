@@ -17,6 +17,7 @@ class CustomJointMover:
     def generate_trajectory_msg(self, target):
         msg = JointTrajectory()
         msg.header.stamp = rospy.Time.now()
+
         msg.joint_names = [
             'arm_left_joint_1_s', 
             'arm_left_joint_2_l', 
@@ -85,9 +86,9 @@ class CustomJointMover:
     def run(self):
         #rospy.Subscriber("joint_states", JointState, self.callback)
         
-	#TODO: add bash param in package launchfile for setting port number in rospy
+	#TODO: add bash param in launchfile for setting socket port number 
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.sock.bind(('127.0.0.1', 8080))
+        self.sock.bind(('127.0.0.1', 8082))
 
         while True:
             self.sock.listen(1)

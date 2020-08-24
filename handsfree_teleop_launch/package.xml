@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>teleop_launch</name>
+  <name>handsfree_teleop_launch</name>
   <version>0.0.1</version>
   <description>Launch package</description>
   <maintainer email="jasongedev@gmail.com">Jason Ge</maintainer>

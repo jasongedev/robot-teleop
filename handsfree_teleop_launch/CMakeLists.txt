@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(teleop_launch)
+project(handsfree_teleop_launch)
 
 find_package(catkin REQUIRED COMPONENTS
   roslaunch

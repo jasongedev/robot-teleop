@@ -1,4 +1,4 @@
-jog_joint_node:
+custom_joint_mover:
   joint_names:
     - arm_left_joint_1_s
     - arm_left_joint_2_l

@@ -3,7 +3,7 @@
   <name>joint_mover</name>
   <version>0.0.1</version>
   <description>
-    Hands-free Teleoperation of a Dual Arm Robot via Real-time 3D Pose Estimation
+    Node used to send joint trajectory goals
   </description>
   <maintainer email="jasongedev@gmail.com">Jason Ge</maintainer>
   <license>Apache License 2.0</license>
