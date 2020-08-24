@@ -6,4 +6,4 @@ I retained only the portions neccesary for GPU inference. Most of my original wo
 
 ### joint_angle_calculator
 
-This class calculates the extension (Φ) and rotation (ψ) angles of each limb based on inferred skeleton joint positions in 3D space by applying Euler's rotation theorem.
+This class calculates the extension (Φ) and rotation (ψ) angles of each limb as well as torso orientation based on inferred skeleton joint positions in 3D space by applying Euler's rotation theorem.
