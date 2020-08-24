@@ -3,7 +3,6 @@ project(teleop_launch)
 
 find_package(catkin REQUIRED COMPONENTS
   roslaunch
-  rostest
 )
 
 catkin_package()

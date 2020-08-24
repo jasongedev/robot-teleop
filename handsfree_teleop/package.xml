@@ -1,14 +1,18 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>handsfree_teleop</name>
-  <version>0.0.1</version>
+  <version>0.0.2</version>
   <description>
-    Hands-free Teleoperation of Dual Robot Arms via Real-time 3D Pose Estimation
+    a
   </description>
   <maintainer email="jasongedev@gmail.com">Jason Ge</maintainer>
   <license>Apache License 2.0</license>
+
   <buildtool_depend>catkin</buildtool_depend>
+
   <exec_depend>teleop_launch</exec_depend>
+  <exec_depend>joint_mover</exec_depend>
+
   <export>
     <metapackage/>
   </export>
