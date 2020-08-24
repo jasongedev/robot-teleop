@@ -2,7 +2,7 @@
 
 This ROS package is a proof of concept for using ROS and MoveIt to control two robot manipulators that mirror human arm poses captured through a monocular camera feed in real-time.
 
-<img src="resources/example1.gif" width=1200px>
+<img src="resources/example1.gif" width=900px>
 
 Install and setup instructions currently being updated. Discussion of approach & implementation also to come, plus some example videos. Check back on Monday!
 
@@ -21,7 +21,9 @@ Current master-slave implementations within the industry involve devices that ar
 * ROS Melodic Morenia
 * Python >= 3.6
 * Pytorch >= 1.6.0
+* Numpy >= 1.17
 * OpenCV >= 4.0
+* CUDA-capable GPU
 
 ## Set up
 Coming soon
