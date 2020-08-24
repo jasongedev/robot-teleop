@@ -22,7 +22,9 @@ def run_inference(args):
     joint_angle_calculator = JointAngleCalculator()
 
     stride = 8
-    net = InferenceEnginePyTorch(args.model, "GPU")
+    #net = InferenceEnginePyTorch(args.model, "GPU")
+    model_path = os.path.join('models', 'human-pose-estimation-3d.pth')
+    net = InferenceEnginePyTorch(model_path, "GPU")
 
     canvas_3d = np.zeros((720, 1280, 3), dtype=np.uint8)
     plotter = Plotter3d(canvas_3d.shape[:2])
