@@ -10,7 +10,10 @@ class JointAngleCalculator:
         l_average_z = (pose[0, 16][1] + pose[0, 18][1] + pose[0, 3][1] + pose[0, 6][1])/4
         r_average_z = (pose[0, 15][1] + pose[0, 17][1] + pose[0, 9][1] + pose[0, 12][1])/4
 
-        return math.asinh((l_average_z) - (r_average_z) / (l_average_x + r_average_x))
+        if l_average_z > r_average_z:
+            return math.atan2(l_average_z , l_average_x + r_average_x) + math.pi / 2 
+        else:
+            return math.atan2(r_average_z , l_average_x + r_average_x) + math.pi / 2
 
     def calculate_shoulder_angles(self, shoulder, elbow):
         #Use arctan to find angle between upper arm and vertical spine i.e. armpit angle
@@ -84,5 +87,5 @@ class JointAngleCalculator:
 
             if not np.isnan(angles).any():
                 return angles
-                
+
         return 0
