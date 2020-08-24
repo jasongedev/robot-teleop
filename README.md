@@ -50,6 +50,14 @@ $ roslaunch motoman_sda10f_moveit_config moveit_planning_execution.launch sim:=t
 ```
 $ roslaunch handsfree_teleop_launch teleop.launch
 ```
+To stream video input from webcam:
 ```
 $ python3 src/handsfree_teleop/pose_estimation/main.py --video /dev/video0
+```
+OR 
+
+To stream a pre-recorded video:
+
+```
+$ python3 src/handsfree_teleop/pose_estimation/main.py --video {VIDEO_FILEPATH}.mp4
 ```
