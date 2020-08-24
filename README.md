@@ -2,7 +2,7 @@
 
 This ROS package is a proof of concept for using ROS and MoveIt to control two robot manipulators that mirror human arm poses captured through a monocular camera feed in real-time.
 
-<img src="resource/example1.gif" width=1200px>
+<img src="resources/example1.gif" width=1200px>
 
 Install and setup instructions currently being updated. Discussion of approach & implementation also to come, plus some example videos. Check back on Monday!
 
@@ -28,13 +28,13 @@ Coming soon
 
 ## Usage
 
-From Catkin workspace:
-```
-$ python3 src/handsfree_teleop/pose_estimation/main.py -m human-pose-estimation-3d.pth --video /dev/video0
-```
+From within Catkin workspace:
 ```
 $ roslaunch motoman_sda10f_moveit_config moveit_planning_execution.launch sim:=true
 ```
 ```
-$ roslaunch handsfree_teleop teleop.launch
+$ roslaunch handsfree_teleop_launch teleop.launch
+```
+```
+$ python3 src/handsfree_teleop/pose_estimation/main.py --video /dev/video0
 ```
