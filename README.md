@@ -2,10 +2,9 @@
 
 This ROS package is a proof of concept visualized in RViz for using ROS and MoveIt to control two robot manipulators that mirror human arm poses in real-time captured through a monocular camera feed.
 
+Live demo with commentary: https://youtu.be/JviMLEeE7u8 
 <img src="example_gifs/example1.gif" width=1200px>
 <img src="example_gifs/example2.gif" width=1200px>
-
-Live demo with commentary: https://youtu.be/JviMLEeE7u8 
 
 ## Table of Contents
 - [Overview](#overview)
