@@ -1,6 +1,6 @@
 # Hands-free Teleoperation of a Dual-Arm Robot via Real-time 3D Pose Estimation
 
-This ROS package is a proof of concept for using ROS and MoveIt to control two robot manipulators that mirror human arm poses captured through a monocular camera feed in real-time.
+This ROS package is a proof of concept visualized in RViz for using ROS and MoveIt to control two robot manipulators that mirror human arm poses in real-time captured through a monocular camera feed.
 
 <img src="example_gifs/example1.gif" width=1200px>
 <img src="example_gifs/example2.gif" width=1200px>
