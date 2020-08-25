@@ -5,6 +5,8 @@ This ROS package is a proof of concept visualized in RViz for using ROS and Move
 <img src="example_gifs/example1.gif" width=1200px>
 <img src="example_gifs/example2.gif" width=1200px>
 
+Live demo with commentary: https://youtu.be/JviMLEeE7u8 
+
 ## Table of Contents
 - [Overview](#overview)
 - [Requirements](#requirements)
