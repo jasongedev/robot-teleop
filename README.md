@@ -11,7 +11,7 @@ This ROS package is a proof of concept visualized in RViz for using ROS and Move
 - [Setup](#setup)
 - [Install](#install)
 - [Usage](#usage)
-- [How-it-works](#how it works)
+- [How it works](#how-it-works)
 
 ## Overview
 
