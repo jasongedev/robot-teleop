@@ -5,7 +5,15 @@ This ROS package is a proof of concept visualized in RViz for using ROS and Move
 <img src="example_gifs/example1.gif" width=1200px>
 <img src="example_gifs/example2.gif" width=1200px>
 
-# Overview
+## Table of Contents
+- [Overview](#overview)
+- [Requirements](#requirements)
+- [Setup](#setup)
+- [Install](#install)
+- [Usage](#usage)
+- [How-it-works](#how it works)
+
+## Overview
 
 In practice, manually controlling a robot and deviating it off a pre-programmed path is either highly imprecise or highly arduous.
 
@@ -24,15 +32,15 @@ Current master-slave implementations within the industry involve devices that ar
 * OpenCV >= 4.0
 * CUDA-capable GPU
 
-## Set up
+## Setup
 Step 1:
 [Create a Catkin workspace](http://wiki.ros.org/melodic/Installation/Source#Create_a_catkin_Workspace)
 
 Step 2:
 [Install the ROS-Industrial packages](http://wiki.ros.org/Industrial/Install)
 
-Step 3:
-Install this repo into your Catkin workspace:
+## Install
+Build from source into your Catkin workspace:
 ```
 git clone "https://github.com/jasongedev/handsfree-teleop/" src
 pip3 install -r src/handsfree_teleop/pose_estimation/requirements.txt
@@ -61,3 +69,8 @@ To stream a pre-recorded video:
 ```
 $ python3 src/handsfree_teleop/pose_estimation/main.py --video {VIDEO_FILEPATH.mp4}
 ```
+
+
+## How it works
+
+<img src="example_gifs/flowchart.png" width=800px>
