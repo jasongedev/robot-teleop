@@ -1,6 +1,6 @@
 # Hands-free Teleoperation of a Dual-Arm Robot via Real-time 3D Pose Estimation
 
-This ROS package is a proof of concept visualized in RViz for using ROS and MoveIt to control two robot manipulators that mirror human arm poses in real-time captured through a monocular camera feed.
+This ROS package is a proof of concept visualized in RViz for using ROS and MoveIt! to control two robot manipulators that mirror human arm poses in real-time captured through a monocular camera feed.
 
 Live demo with commentary: https://youtu.be/JviMLEeE7u8 
 <img src="example_gifs/example1.gif" width=1200px>
@@ -14,6 +14,7 @@ Live demo with commentary: https://youtu.be/JviMLEeE7u8
 - [Usage](#usage)
 - [How it works](#how-it-works)
 - [Discussion](#discussion)
+- [Future goals](#future-goals)
 
 ## Overview
 
@@ -102,3 +103,8 @@ As for applying this package to models beyond the MOTOMAN SDA10F, the core princ
 
 All it would take is changing the joint names and the order of appended joint positions contained within the ```JointTrajectoryActionGoal``` message that is published to the ```joint_trajectory_action``` topic by the ```custom_joint_mover``` node. 
 
+## Future goals
+
+* Implement a 3D Pose Estimation model trained on RGBD input for improved accuracy. Depth sensors are becoming ubiquitous, every new iPhone has one.
+* Implement a 3D Hand Pose Estimation model for precise control of end-effectors and to increase degrees of freedom from 4 to 6 per arm.
+* Abstract custom_joint_mover to work universally with any robot that has a MoveIt! configuration by parameterizing joint_names from the yaml file  
