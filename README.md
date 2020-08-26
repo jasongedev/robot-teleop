@@ -85,13 +85,15 @@ This package is currently modelled to work with the MOTOMAN SDA10F dual arm robo
 
 Caution: this package is not ready for production use with a real MOTOMAN SDA10F robot! Attempts to do so will lead to catastrophic results. Or it might not do anything at all as the drivers may refuse to interpret impossible trajectories.
 
-The obvious reason for being so is that, while joint position limits are being accurately simulated, movement is currently too jittery and instantaneous as a result of me as of yet being unable to simulate the velocity and acceleration limits of the real servos in a MOTOMAN SDA10F.
+The obvious reason for being so is that, while joint position limits are being accurately simulated, movement is currently too jittery and instantaneous as a result of me being as of yet unable to simulate the velocity and acceleration limits of the real servos in a MOTOMAN SDA10F.
 
-I don’t think temporal smoothing is necessary on the model-level as the movement planner should be more than capable in practice of smoothing the trajectory from one frame to the next without excessive wear on the servos. Instantaneous change of direction might easily be limited with trajectory splicing or by lowering the acceleration values.
+I don’t think temporal smoothing is necessary on the model-level as the movement planner should be more than capable in practice of smoothing the trajectory from one frame to the next without excessive wear on the servos. Instantaneous change of direction might easily be constrained with trajectory splicing or by limiting the acceleration values.
 
-I think the necessary information for simulating acceleration and velocity is contained within the simulated drivers and URDF file that come packaged with the MOTOMAN SDA10F config in ROS-Industrial. The next thing I’ll have to try is to see if it might have something to do with setting a start-position for the joint trajectory goal alongside the end-position that it currently snaps to, as well as declaring a duration for the time_from_start variable in the FollowTrajectoryActionGoal message. 
+I think the necessary information for simulating acceleration and velocity is contained within the simulated drivers and URDF file that come packaged with the MOTOMAN SDA10F config in ROS-Industrial. In fact, the ```joint_limits.yaml``` file in the robot's config folder describes something to that exact effect. 
+
+The next thing I’ll have to try is to see if it might have something to do with declaring a start-position for the joint trajectory goal alongside the end-position that it currently snaps to, as well as setting a duration for the ```time_from_start``` variable in the ```FollowTrajectoryActionGoal``` message. 
 
 As for applying this package to models beyond the MOTOMAN SDA10F, the core principle behind translating XYZ human skeleton joint coordinates to Euler angles and in turn, robot joint states, is translatable to any singular or dual industrial manipulators corresponding to either or both human arms. 
 
-All it would take is changing the joint names and the order of appended joint positions contained within the JointTrajectoryActionGoal message that is published to the joint_trajectory_action topic by the custom_joint_mover node. 
+All it would take is changing the joint names and the order of appended joint positions contained within the ```JointTrajectoryActionGoal``` message that is published to the ```joint_trajectory_action``` topic by the ```custom_joint_mover``` node. 
 
