@@ -99,7 +99,7 @@ The obvious reason for being so is that, while collision and joint position limi
 
 I don’t think temporal smoothing is necessary on the model-level as the movement planner should in practice be more than capable of smoothing trajectory goals from one frame to the next without excessive wear on the servos. Instantaneous change of direction might easily be constrained with trajectory splicing or by limiting acceleration values.
 
-I think the necessary information for simulating acceleration and velocity is contained within the simulated drivers and URDF file that are packaged with the MOTOMAN SDA10F config in ROS-Industrial. In fact, the ```joint_limits.yaml``` file in the robot's config folder describes something to that exact effect. 
+I think the necessary information for limiting acceleration and velocity is contained within the simulated drivers and URDF file that come packaged with the MOTOMAN SDA10F configuration in ROS-Industrial. In fact, the ```joint_limits.yaml``` file in the robot's config folder describes something to that exact effect. 
 
 The next thing I’ll have to try is to see if it might have something to do with declaring a start-position for the joint trajectory goal alongside the end-position that it currently snaps to, as well as setting a duration for the ```time_from_start``` variable in the ```FollowTrajectoryActionGoal``` message. 
 
