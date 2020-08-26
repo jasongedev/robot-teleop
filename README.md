@@ -49,6 +49,7 @@ Build from source into your Catkin workspace:
 ```
 cd catkin_ws
 git clone https://github.com/jasongedev/handsfree-teleop/ src/handsfree_teleop
+pip3 install -r src/handsfree_teleop/pose_estimation/requirements.txt
 rosdep -r install
 catkin build -j7
 source devel/setup.bash
@@ -105,6 +106,6 @@ All it would take is changing the joint names and the order of appended joint po
 
 ## Future goals
 
-* Implement a 3D Pose Estimation model trained on RGBD input for improved accuracy. Depth sensors are becoming ubiquitous, every new iPhone has one.
-* Implement a 3D Hand Pose Estimation model for precise control of end-effectors and to increase degrees of freedom from 4 to 6 per arm.
-* Abstract custom_joint_mover to work universally with any robot that has a MoveIt! configuration by parameterizing joint_names from the yaml file  
+* Implement a 3D Pose Estimation model trained on RGBD input for improved accuracy. Depth sensors are now ubiquitous, every new iPhone has one.
+* Implement a 3D Hand Pose Estimation model to enable precise control of end-effectors as well as increasing degrees of freedom from 4 to 6 per arm.
+* Abstract custom_joint_mover to work universally with any robot that has a MoveIt! configuration by parameterizing joint names from the .yaml file  
