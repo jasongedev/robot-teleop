@@ -95,9 +95,9 @@ Caution: this package is not ready for production use with a real MOTOMAN SDA10F
 
 Attempts to do so will lead to catastrophic results. Or it may not do anything at all as the drivers might refuse to interpret impossible trajectories.
 
-The obvious reason for being so is that, while collision and joint position limits are being accurately simulated, movement is currently too jittery and instantaneous as a result of me being as of yet unable to figure out how to simulate the velocity and acceleration limits of real servos in a MOTOMAN SDA10F.
+The obvious reason is that, while collision and joint position limits are being accurately simulated, movement is currently too jittery and instantaneous as a result of me being unable as of yet to figure out how to simulate the velocity and acceleration limits of real servos in a MOTOMAN SDA10F.
 
-I don’t think temporal smoothing is necessary on the model-level as the movement planner should in practice be more than capable of smoothing trajectory goals from one frame to the next without excessive wear on the servos. Instantaneous change of direction might easily be constrained with trajectory splicing or by limiting acceleration values.
+I don’t think temporal smoothing is necessary on the model-level as the movement planner should in practice be more than capable of smoothing trajectory goals from one frame to the next without excessive wear on the servos. Instantaneous change of direction might easily be constrained with trajectory splicing or by governing acceleration values.
 
 I think the necessary information for limiting acceleration and velocity is contained within the simulated drivers and URDF file that come packaged with the MOTOMAN SDA10F configuration in ROS-Industrial. In fact, the ```joint_limits.yaml``` file in the robot's config folder describes something to that exact effect. 
 
