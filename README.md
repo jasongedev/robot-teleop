@@ -48,7 +48,6 @@ Build from source into your Catkin workspace:
 ```
 cd catkin_ws
 git clone https://github.com/jasongedev/handsfree-teleop/ src/handsfree_teleop
-pip3 install -r src/handsfree_teleop/pose_estimation/requirements.txt
 rosdep -r install
 catkin build -j7
 source devel/setup.bash
