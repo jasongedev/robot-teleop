@@ -102,7 +102,7 @@ I think the necessary information for simulating acceleration and velocity is co
 
 The next thing I’ll have to try is to see if it might have something to do with declaring a start-position for the joint trajectory goal alongside the end-position that it currently snaps to, as well as setting a duration for the ```time_from_start``` variable in the ```FollowTrajectoryActionGoal``` message. 
 
-As for applying this package to models beyond the MOTOMAN SDA10F, the core principle behind translating XYZ human skeleton joint coordinates to Euler angles and in turn, robot joint positions, is applicable to any singular or dual industrial manipulator(s) corresponding to either or both human arm(s). 
+As for applying this package to robot models beyond the MOTOMAN SDA10F, the core principle behind translating XYZ human skeleton joint coordinates to Euler angles and in turn, robot joint positions, is applicable to any single or dual industrial manipulator(s), corresponding to either or both human arm(s). 
 
 All it would take is changing the ```joint_names``` and the order of appended ```JointTrajectoryPoint.positions``` contained within the ```JointTrajectoryActionGoal``` message that is published to the ```joint_trajectory_action``` topic by the ```custom_joint_mover``` node. 
 
