@@ -56,7 +56,7 @@ source devel/setup.bash
 
 Optional: in order to obtain the 100hz update rate in RViz as shown in the examples:
 ```
-echo "$(awk '/robot_interface_simulator.launch/ { print; print "      <param name=\"pub_rate\" value="100" />"; next} 1'  src/motoman/motoman_sda10f_moveit_config/launch/moveit_planning_execution.launch)" > src/motoman/motoman_sda10f_moveit_config/launch/moveit_planning_execution.launch
+echo "$(awk '/robot_interface_simulator.launch/ { print; print "      <param name=\"pub_rate\" value="100" />"; next}1'  src/motoman/motoman_sda10f_moveit_config/launch/moveit_planning_execution.launch)" > src/motoman/motoman_sda10f_moveit_config/launch/moveit_planning_execution.launch
 ```
 
 ## Usage
