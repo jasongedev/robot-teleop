@@ -1,6 +1,6 @@
 # Hands-free Teleoperation of a Dual-Arm Robot via Real-time 3D Pose Estimation
 
-This ROS package is a proof of concept visualized in RViz for using ROS and MoveIt! to control two robot manipulators that mirror human arm poses in real-time captured through a monocular camera feed.
+This ROS package is a proof of concept visualized in rviz for using ROS and MoveIt! to control two robot manipulators that mirror human arm poses in real-time captured through a monocular camera feed.
 
 Live demo with commentary: https://youtu.be/JviMLEeE7u8 
 <img src="example_gifs/example1.gif" width=1200px>
@@ -55,7 +55,7 @@ catkin build -j7
 source devel/setup.bash
 ```
 
-Optional: in order to obtain the 100hz update rate in RViz as shown in the examples:
+Optional: in order to obtain the 100hz update rate in rviz as shown in the examples:
 ```
 echo "$(awk '/robot_interface_simulator.launch/ { print; print "      <param name=\"pub_rate\" value="100" />"; next}1'  src/motoman/motoman_sda10f_moveit_config/launch/moveit_planning_execution.launch)" > src/motoman/motoman_sda10f_moveit_config/launch/moveit_planning_execution.launch
 ```
