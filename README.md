@@ -104,7 +104,7 @@ The next thing I’ll have to try is to see if it might have something to do wit
 
 As for applying this package to models beyond the MOTOMAN SDA10F, the core principle behind translating XYZ human skeleton joint coordinates to Euler angles and in turn, robot joint positions, is applicable to any singular or dual industrial manipulator(s) corresponding to either or both human arm(s). 
 
-All it would take is changing the joint names and the order of appended joint positions contained within the ```JointTrajectoryActionGoal``` message that is published to the ```joint_trajectory_action``` topic by the ```custom_joint_mover``` node. 
+All it would take is changing the ```joint_names``` and the order of appended ```JointTrajectoryPoint.positions``` contained within the ```JointTrajectoryActionGoal``` message that is published to the ```joint_trajectory_action``` topic by the ```custom_joint_mover``` node. 
 
 ## Future goals
 
