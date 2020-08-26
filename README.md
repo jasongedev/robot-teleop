@@ -54,6 +54,9 @@ catkin build -j7
 source devel/setup.bash
 ```
 
+Optional: in order to obtain the 100hz update rate within RViz as shown in the examples:
+```echo "$(awk '/robot_interface_simulator.launch/ { print; print "      <param name=\"pub_rate\" value="100" />"; next} 1'  src/motoman/motoman_sda10f_moveit_config/launch/moveit_planning_execution.launch)" > launch/moveit_planning_execution.launch```
+
 ## Usage
 
 From three seperate terminals within your Catkin workspace:
@@ -83,11 +86,12 @@ $ python3 src/handsfree_teleop/pose_estimation/main.py --video {VIDEO_FILEPATH.m
 ## Discussion 
 This package is currently modelled to work with the MOTOMAN SDA10F dual arm robot that comes by default with installing the ROS-Industrial packages.
 
-Caution: this package is not ready for production use with a real MOTOMAN SDA10F robot! Attempts to do so will lead to catastrophic results. Or it might not do anything at all as the drivers may refuse to interpret impossible trajectories.
+Caution: this package is not ready for production use with a real MOTOMAN SDA10F robot! 
+Attempts to do so will lead to catastrophic results. Or it might not do anything at all as the drivers may refuse to interpret impossible trajectories.
 
-The obvious reason for being so is that, while joint position limits are being accurately simulated, movement is currently too jittery and instantaneous as a result of me being as of yet unable to simulate the velocity and acceleration limits of the real servos in a MOTOMAN SDA10F.
+The obvious reason for being so is that, while collision and joint position limits are being accurately simulated, movement is currently too jittery and instantaneous as a result of me being as of yet unable to simulate the velocity and acceleration limits of the real servos in a MOTOMAN SDA10F.
 
-I don’t think temporal smoothing is necessary on the model-level as the movement planner should be more than capable in practice of smoothing the trajectory from one frame to the next without excessive wear on the servos. Instantaneous change of direction might easily be constrained with trajectory splicing or by limiting the acceleration values.
+I don’t think temporal smoothing is necessary on the model-level as the movement planner should be more than capable in practice of smoothing the trajectory from one frame to the next without excessive wear on the servos. Instantaneous change of direction might easily be constrained with trajectory splicing or by limiting acceleration values.
 
 I think the necessary information for simulating acceleration and velocity is contained within the simulated drivers and URDF file that come packaged with the MOTOMAN SDA10F config in ROS-Industrial. In fact, the ```joint_limits.yaml``` file in the robot's config folder describes something to that exact effect. 
 
