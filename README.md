@@ -22,11 +22,13 @@ In practice, manually controlling a robot and deviating it off a pre-programmed 
 
 Existing human-in-the-loop solutions in commercial robots presently involve the robot driver being sent jogging commands by a handheld controller or other hardware input device. Significant data is lost in the process of a human operator translating their movement intention into joystick or button inputs. 
 
-In addition, the human operator takes on significant mental load in the form of having to extrapolate their actions into 3D space from a third person perspective. This may lead to slower than desired operation or worse, human error.
+In addition, the human operator takes on significant mental load in the form of having to extrapolate every action into 3D space from a third person perspective. This may lead to slower than desired operation or worse, human error.
 
 The most precise and instinctive method by which we humans use to interact with the physical world around us is by none other than manipulating the limbs of our own body. 
 
-Current master-slave implementations within the industry involve devices that are highly specific to a single robot, importable, expensive, and generally unscaleable. Having a cost-free and universal method of control that allows untrained human operators to move the limbs of a robot as if it were an extension their own body may lead to the opening of new doors within the robotics industry for applications that extend beyond automation.
+Current master-slave implementations within the industry involve devices that are highly specific to a single robot, importable, expensive, and generally unscaleable. 
+
+Having a cost-free and universal method of control that allows untrained human operators to move the limbs of a robot as if it were an extension their own body may lead to the opening of new doors within the robotics industry for applications that extend beyond automation.
 
 ## Requirements
 * Ubuntu 18.04 LTS
@@ -92,15 +94,15 @@ This package is currently modelled to work with the MOTOMAN SDA10F dual arm robo
 Caution: this package is not ready for production use with a real MOTOMAN SDA10F robot! 
 Attempts to do so will lead to catastrophic results. Or it might not do anything at all as the drivers may refuse to interpret impossible trajectories.
 
-The obvious reason for being so is that, while collision and joint position limits are being accurately simulated, movement is currently too jittery and instantaneous as a result of me being as of yet unable to simulate the velocity and acceleration limits of the real servos in a MOTOMAN SDA10F.
+The obvious reason for being so is that, while collision and joint position limits are being accurately simulated, movement is currently too jittery and instantaneous as a result of me being as of yet unable to figure out how to simulate the velocity and acceleration limits of real servos in a MOTOMAN SDA10F.
 
-I don’t think temporal smoothing is necessary on the model-level as the movement planner should be more than capable in practice of smoothing the trajectory from one frame to the next without excessive wear on the servos. Instantaneous change of direction might easily be constrained with trajectory splicing or by limiting acceleration values.
+I don’t think temporal smoothing is necessary on the model-level as the movement planner should in practice be more than capable of smoothing trajectory goals from one frame to the next without excessive wear on the servos. Instantaneous change of direction might easily be constrained with trajectory splicing or by limiting acceleration values.
 
-I think the necessary information for simulating acceleration and velocity is contained within the simulated drivers and URDF file that come packaged with the MOTOMAN SDA10F config in ROS-Industrial. In fact, the ```joint_limits.yaml``` file in the robot's config folder describes something to that exact effect. 
+I think the necessary information for simulating acceleration and velocity is contained within the simulated drivers and URDF file that are packaged with the MOTOMAN SDA10F config in ROS-Industrial. In fact, the ```joint_limits.yaml``` file in the robot's config folder describes something to that exact effect. 
 
 The next thing I’ll have to try is to see if it might have something to do with declaring a start-position for the joint trajectory goal alongside the end-position that it currently snaps to, as well as setting a duration for the ```time_from_start``` variable in the ```FollowTrajectoryActionGoal``` message. 
 
-As for applying this package to models beyond the MOTOMAN SDA10F, the core principle behind translating XYZ human skeleton joint coordinates to Euler angles and in turn, robot joint states, is translatable to any singular or dual industrial manipulators corresponding to either or both human arms. 
+As for applying this package to models beyond the MOTOMAN SDA10F, the core principle behind translating XYZ human skeleton joint coordinates to Euler angles and in turn, robot joint positions, is applicable to any singular or dual industrial manipulator(s) corresponding to either or both human arm(s). 
 
 All it would take is changing the joint names and the order of appended joint positions contained within the ```JointTrajectoryActionGoal``` message that is published to the ```joint_trajectory_action``` topic by the ```custom_joint_mover``` node. 
 
