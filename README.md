@@ -92,7 +92,8 @@ $ python3 src/handsfree_teleop/pose_estimation/main.py --video {VIDEO_FILEPATH.m
 This package is currently modelled to work with the MOTOMAN SDA10F dual arm robot that comes by default with installing the ROS-Industrial packages.
 
 Caution: this package is not ready for production use with a real MOTOMAN SDA10F robot! 
-Attempts to do so will lead to catastrophic results. Or it might not do anything at all as the drivers may refuse to interpret impossible trajectories.
+
+Attempts to do so will lead to catastrophic results. Or it may not do anything at all as the drivers might refuse to interpret impossible trajectories.
 
 The obvious reason for being so is that, while collision and joint position limits are being accurately simulated, movement is currently too jittery and instantaneous as a result of me being as of yet unable to figure out how to simulate the velocity and acceleration limits of real servos in a MOTOMAN SDA10F.
 
