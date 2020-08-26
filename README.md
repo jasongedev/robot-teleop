@@ -109,6 +109,6 @@ All it would take is changing the ```joint_names``` as well as the order and num
 
 ## Future goals
 
-* Abstract ```custom_joint_mover``` to work universally with any robot that has a MoveIt! configuration by parameterizing joint names from the yaml file.  
+* Abstract ```custom_joint_mover``` to work universally with any robot that has a MoveIt! configuration by parameterizing the joint names from a yaml file.  
 * Implement a 3D Pose Estimation model trained on RGBD input for improved accuracy. Depth sensors are now ubiquitous, every new iPhone has one.
 * Implement a 3D Hand Pose Estimation model to enable precise control of end-effectors as well as increasing degrees of freedom from 4 to 6 per arm.
