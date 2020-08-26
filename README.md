@@ -18,11 +18,13 @@ Live demo with commentary: https://youtu.be/JviMLEeE7u8
 
 In practice, manually controlling a robot and deviating it off a pre-programmed path is either highly imprecise or highly arduous.
 
-Existing human-in-the-loop solutions in industrial robots involve the driver being sent jogging commands by a handheld controller or other hardware input device. Significant data is lost in the process of a human operator translating their movement intention into joystick or button inputs. In addition, the human operator takes on significant mental load by having to extrapolate their actions into 3D space from a third person perspective.
+Existing human-in-the-loop solutions in commercial robots presently involve the driver being sent jogging commands by a handheld controller or other hardware input device. Significant data is lost in the process of a human operator translating their movement intention into joystick or button inputs. 
+
+In addition, the human operator takes on significant mental load in the form of having to extrapolate their actions into 3D space from a third person perspective. This may lead to slower than desired operation or worse, human error.
 
 The most precise and instinctive method by which we humans use to interact with the physical world around us is by none other than manipulating the limbs of our own body. 
 
-Current master-slave implementations within the industry involve devices that are highly specific to a single robot, importable, expensive, and generally unscaleable. Having a cost-free and universal method of control that allows untrained human operators to move the limbs of a robot as if it were their own body may lead to the opening of new doors within the robotics industry.
+Current master-slave implementations within the industry involve devices that are highly specific to a single robot, importable, expensive, and generally unscaleable. Having a cost-free and universal method of control that allows untrained human operators to move the limbs of a robot as if it were an extension their own body may lead to the opening of new doors within the robotics industry.
 
 ## Requirements
 * Ubuntu 18.04 LTS
@@ -43,6 +45,7 @@ Step 2:
 ## Install
 Build from source into your Catkin workspace:
 ```
+cd catkin_ws
 git clone https://github.com/jasongedev/handsfree-teleop/ src/handsfree_teleop
 pip3 install -r src/handsfree_teleop/pose_estimation/requirements.txt
 rosdep -r install
