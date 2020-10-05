@@ -80,25 +80,6 @@ $ python3 src/handsfree_teleop/pose_estimation/main.py --video {VIDEO_FILEPATH.m
 
 <img src="example_gifs/flowchart.png" width=800px>
 
-## Discussion 
-This package is currently written to work with the simulated MOTOMAN SDA10F dual arm robot that comes included with ROS-Industrial.
-
-Caution: this package is not ready for production use with a real MOTOMAN SDA10F robot! 
-
-Attempts to do so will lead to catastrophic results. Or it may not do anything at all as the drivers might refuse to interpret impossible trajectories.
-
-The obvious reason is that, while collision and joint position limits are being accurately simulated, movement is currently too jittery and instantaneous as a result of me being unable as of yet to figure out how to simulate the velocity and acceleration limits of real servos in a MOTOMAN SDA10F.
-
-I don’t think temporal smoothing is necessary on the model-level as the movement planner should in practice be more than capable of smoothing trajectory goals from one frame to the next without excessive wear on the servos. Instantaneous change of direction might easily be constrained with trajectory splicing or by governing acceleration values.
-
-I think the necessary information for limiting acceleration and velocity is contained within the simulated drivers and URDF file that come packaged with the MOTOMAN SDA10F configuration in ROS-Industrial. In fact, the ```joint_limits.yaml``` file in the robot's config folder describes something to that exact effect. 
-
-The next thing I’ll have to try is to see if it might have something to do with declaring a start-position for the joint trajectory goal alongside the end-position that it currently snaps to, as well as setting a duration for the ```time_from_start``` variable in the ```FollowTrajectoryActionGoal``` message. 
-
-As for applying this package to robot models beyond the MOTOMAN SDA10F, the core principle behind translating XYZ human skeleton joint coordinates to Euler angles and in turn, robot joint positions, is applicable to any single or dual industrial manipulator(s), corresponding to either or both human arm(s). 
-
-All it would take is changing the ```joint_names``` as well as the order and number of appended ```JointTrajectoryPoint.positions``` contained within the ```JointTrajectoryActionGoal``` message that is published to the ```joint_trajectory_action``` topic by the ```custom_joint_mover``` node. 
-
 ## Future goals
 
 * Abstract ```custom_joint_mover``` to work universally with any robot that has a MoveIt! configuration by parameterizing the joint names from a yaml file.  
