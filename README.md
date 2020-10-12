@@ -22,7 +22,7 @@ In practice, manually controlling a robot and deviating it off a pre-programmed 
 
 The most precise and instinctive method by which we humans use to interact with the physical world around us is by none other than manipulating the limbs of our own body. Current master-slave implementations within the industry involve devices that are highly specific to a single robot, importable, expensive, and generally unscaleable. Having a cost-free and universal method of control that allows untrained human operators to move the limbs of a robot as if it were an extension their own body may lead to the opening of new doors within the robotics industry for applications that extend beyond automation.
 
-# Use cases
+## Use cases
 * Telerobotics
 * Kinesthetic teaching
 * Supervised learning 
@@ -84,9 +84,3 @@ $ python3 src/handsfree_teleop/pose_estimation/main.py --video {VIDEO_FILEPATH.m
 ## How it works
 
 <img src="example_gifs/flowchart.png" width=800px>
-
-## Future goals
-
-* Abstract ```custom_joint_mover``` to work universally with any MoveIt! configuration by parameterizing joint names from the yaml file.  
-* Implement a 3D Pose Estimation model trained on RGBD input for improved accuracy. Depth sensors are now ubiquitous, every new iPhone has one.
-* Implement a 3D Hand Pose Estimation model to enable precise control of end-effectors as well as increasing degrees of freedom from 4 to 6 per arm.
