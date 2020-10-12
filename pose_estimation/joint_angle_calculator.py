@@ -1,3 +1,6 @@
+# This class calculates the extension (Φ) and rotation (ψ) angles of each limb as well as torso orientation 
+# based on inferred skeleton joint positions in 3D space by applying Euler's rotation theorem.
+
 import numpy as np
 import math
 
