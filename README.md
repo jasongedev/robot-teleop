@@ -1,4 +1,4 @@
-# Robot Teleoperation using Real-time 3D Huaman Pose Estimation 
+# Robot Teleoperation using Real-time 3D Pose Estimation 
 
 This ROS package is a proof of concept demonstrating a method of controlling two robot manipulators by mirroring human arm poses captured in real-time. 
 
