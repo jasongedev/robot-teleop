@@ -12,8 +12,6 @@ This ROS package demonstrates a method of controlling two robot manipulators by 
 - [Install](#install)
 - [Usage](#usage)
 - [How it works](#how-it-works)
-- [Discussion](#discussion)
-- [Future goals](#future-goals)
 
 ## Overview
 
