@@ -41,7 +41,7 @@ Step 1:
 [Create a Catkin workspace](http://wiki.ros.org/melodic/Installation/Source#Create_a_catkin_Workspace)
 
 Step 2:
-[Install the ROS-Industrial packages](http://wiki.ros.org/Industrial/Install)
+[Install ROS-Industrial](http://wiki.ros.org/Industrial/Install)
 
 ## Install
 Build from source into your Catkin workspace:
