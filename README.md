@@ -1,4 +1,4 @@
-# Robot Teleoperation using Real-time 3D Pose Estimation 
+# Robot Teleoperation via Real-time 3D Pose Estimation 
 
 This ROS package is a proof of concept demonstrating a method of controlling two robot manipulators by mirroring human arm poses captured in real-time. 
 
@@ -18,7 +18,7 @@ Live demo with commentary: https://youtu.be/JviMLEeE7u8
 
 ## Overview
 
-In practice, manually controlling a robot and deviating it off a pre-programmed path can be often either highly imprecise or highly arduous. Existing human-in-the-loop solutions in commercial robots presently involve the robot driver being sent jogging commands by a handheld controller or other hardware input device. Significant data is lost in the process of a human operator translating their movement intention into joystick or button inputs. In addition, the human operator takes on significant mental load in the form of having to extrapolate every action into 3D space from a third person perspective. This may lead to slower than desired operation or human error.
+In practice, manually controlling a robot and deviating it off a pre-programmed path can often be arduous or imprecise. Existing human-in-the-loop solutions in industrial robots presently involve a robot driver being sent jogging commands from a handheld controller or other hardware input device. Precision is lost in the process of a human operator translating their movement intention into joystick or button inputs. In addition, the human operator takes on significant mental load in the form of having to extrapolate every action into 3D space from a third person perspective. This may lead to slower than desired operation or human error.
 
 The most precise and instinctive method by which we humans use to interact with the physical world around us is by none other than manipulating the limbs of our own body. Current master-slave implementations within the industry involve devices that are highly specific to a single robot, importable, expensive, and generally unscaleable. Having a cost-free and universal method of control that allows untrained human operators to move the limbs of a robot as if it were an extension their own body may lead to the opening of new doors within the robotics industry for applications that extend beyond automation.
 
