@@ -2,7 +2,6 @@
 
 This ROS package demonstrates a method of controlling two robot manipulators by mirroring human arm poses in real-time. 
 
-Video example: https://youtu.be/JviMLEeE7u8 
 <img src="example_gifs/example1.gif" width=1200px>
 <img src="example_gifs/example2.gif" width=1200px>
 
