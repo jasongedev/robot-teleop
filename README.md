@@ -1,6 +1,6 @@
 # Robot Teleoperation via Real-time 3D Pose Estimation 
 
-This ROS package is a proof of concept demonstrating a method of controlling two robot manipulators by mirroring human arm poses captured in real-time. 
+This ROS package demonstrates a method of controlling two robot manipulators by mirroring human arm poses in real-time. 
 
 Video example: https://youtu.be/JviMLEeE7u8 
 <img src="example_gifs/example1.gif" width=1200px>
